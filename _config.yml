@@ -27,11 +27,13 @@ domain: blog.richardfan.xyz
 url: https://blog.richardfan.xyz # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: richardfan1126
 github_username:  richardfan1126
+paginate: 5
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-paginate
 
 # Exclude from processing.
 # The following items will not be processed, by default.
