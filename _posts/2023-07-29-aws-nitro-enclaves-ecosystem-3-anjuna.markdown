@@ -2,22 +2,8 @@
 layout: post
 title:  "AWS Nitro Enclaves Ecosystem (3) - Anjuna"
 date:   "2023-07-29"
+toc:    true
 ---
-
-## Table of Contents
-1. [Background](#background)
-1. [What is Anjuna](#what-is-anjuna)
-   1. [Tools as a Service](#tools-as-a-service)
-1. [Features](#features)
-   1. [Network Proxy](#network-proxy)
-   1. [More handy tools - Secret Storing, Persistent Storage](#more-handy-tools---secret-storing-persistent-storage)
-1. [Most Powerful Feature - Kubernetes plugin](#most-powerful-feature---kubernetes-plugin)
-1. [Data Privacy](#data-privacy)
-   1. [Operate in Private Network](#operate-in-private-network)
-   1. [Licensing Model](#licensing-model)
-1. [Final Thought](#final-thought)
-   1. [Trust Model](#trust-model)
-   1. [Target Audience](#target-audience)
 
 ## Background   
 After my last [post on Evervault](/2023/02/09/aws-nitro-enclave-ecosystem-2-evervault.html){:target="_blank"} was published, I didn't have time to try out other AWS Nitro Enclaves service providers. But luckily, Anjuna, which is also on my list to review, reached out to me and offered a free trial for me to review its Nitro enclaves offering.  

@@ -2,21 +2,8 @@
 layout: post
 title:  "AWS Nitro Enclaves Ecosystem (1) - Chain of trust"
 date:   "2022-12-22"
+toc:    true
 ---
-
-## Table of Contents
-1. [Background](#background)
-1. [Security is not always inherited](#security-is-not-always-inherited)
-1. [Trust hierarchy of an enclave application](#trust-hierarchy-of-an-enclave-application)
-1. [Chain of trust](#chain-of-trust)
-   1. [Attestation Document](#attestation-document)
-   1. [Software providers](#software-providers)
-   1. [Application code](#application-code)
-   1. [External audit](#external-audit)
-   1. [Platform provider - sidecar](#platform-provider---sidecar)
-   1. [Platform provider - security control](#platform-provider---security-control)
-   1. [Infrastructure provider](#infrastructure-provider)
-1. [What's next](#whats-next)
 
 ## Background
 

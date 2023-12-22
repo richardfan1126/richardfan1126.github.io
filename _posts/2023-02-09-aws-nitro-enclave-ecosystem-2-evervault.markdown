@@ -2,22 +2,8 @@
 layout: post
 title:  "AWS Nitro Enclaves Ecosystem (2) - Evervault"
 date:   "2023-02-09"
+toc:    true
 ---
-## Table of Contents
-
-1. [Background](#background)
-1. [What is Evervault](#what-is-evervault)
-   1. [Encryption service](#encryption-service)
-   1. [Runtime provisioning](#runtime-provisioning)
-      1. [Evervault Functions](#evervault-functions)
-      1. [Evervault Cages](#evervault-cages)
-1. [Deep dive](#deep-dive)
-   1. [Less infrastructure overhead](#less-infrastructure-overhead)
-   1. [TLS Attestation](#tls-attestation)
-   1. [Unknown sidecar](#unknown-sidecar)
-   1. [Insufficient access control](#insufficient-access-control)
-1. [My thought](#my-thought)
-1. [Final thought](#final-thought)
 
 ## Background
 

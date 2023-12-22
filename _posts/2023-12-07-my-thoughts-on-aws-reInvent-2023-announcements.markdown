@@ -2,21 +2,8 @@
 layout: post
 title:  "My thoughts on AWS re:Invent 2023 announcements"
 date:   "2023-12-07"
+toc:    true
 ---
-
-1. [Preface](#preface)
-1. [Good ones](#good-ones)
-   1. [AWS Security Hub central configuration](#aws-security-hub-central-configuration)
-   1. [AWS Security Hub custom control parameters](#aws-security-hub-custom-control-parameters)
-   1. [Amazon GuardDuty ECS Runtime Monitoring](#amazon-guardduty-ecs-runtime-monitoring)
-   1. [Amazon Inspector agentless vulnerability assessments](#amazon-inspector-agentless-vulnerability-assessments)
-1. [Still good ones, but just ... disappointed](#still-good-ones-but-just--disappointed)
-   1. [AWS Config periodic recording](#aws-config-periodic-recording)
-   1. [Amazon S3 Access Grants](#amazon-s3-access-grants)
-1. [GenAI](#genai)
-   1. [Guardrails for Amazon Bedrock](#guardrails-for-amazon-bedrock)
-   1. [Responsible AI - Amazon Titan image watermark](#responsible-ai---amazon-titan-image-watermark)
-   1. [GenAI help cybersecurity](#genai-help-cybersecurity)
 
 ![Cover Photo](/assets/images/4f85ce7b-f188-4bbf-a274-69a75d35619a.webp)
 
