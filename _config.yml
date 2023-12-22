@@ -33,10 +33,12 @@ minima:
       user_url: https://www.linkedin.com/in/richardfan1126/
     - platform: twitter
       user_url: https://twitter.com/richardfan1126
+    - platform: devto
+      user_url: https://dev.to/richardfan1126
 paginate: 5
 
 # Build settings
-theme: minima
+# theme: minima
 plugins:
   - jekyll-feed
   - jekyll-paginate
