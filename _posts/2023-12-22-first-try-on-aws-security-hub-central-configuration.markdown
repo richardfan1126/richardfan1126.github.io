@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "First Try on AWS Security Hub Central Configuration"
-date:   "2023-12-23"
+date:   "2023-12-22"
 author: Richard Fan
 toc:    true
 ---
