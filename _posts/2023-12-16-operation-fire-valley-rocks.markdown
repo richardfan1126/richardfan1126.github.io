@@ -2,6 +2,7 @@
 layout: post
 title:  "Operation Fire Valley Rocks"
 date:   "2023-12-16"
+author: Richard Fan
 toc:    false
 ---
 

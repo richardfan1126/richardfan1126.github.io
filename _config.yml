@@ -18,7 +18,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Richard Fan's blog
+title: Virtual Security Car
+description: Richard's blogs on Cloud Security
 baseurl: "" # the subpath of your site, e.g. /blog
 domain: blog.richardfan.xyz
 url: https://blog.richardfan.xyz # the base hostname & protocol for your site, e.g. http://example.com

@@ -2,6 +2,7 @@
 layout: post
 title:  "AWS Nitro Enclaves Ecosystem (3) - Anjuna"
 date:   "2023-07-29"
+author: Richard Fan
 toc:    true
 ---
 

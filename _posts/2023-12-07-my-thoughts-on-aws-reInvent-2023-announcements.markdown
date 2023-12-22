@@ -2,6 +2,7 @@
 layout: post
 title:  "My thoughts on AWS re:Invent 2023 announcements"
 date:   "2023-12-07"
+author: Richard Fan
 toc:    true
 ---
 
