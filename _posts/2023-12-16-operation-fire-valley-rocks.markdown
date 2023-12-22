@@ -11,7 +11,7 @@ But luckily, this year is all about GenAI. I used GenAI to help me rewrite the p
 Using Step Functions to make a Christmas Tree reminds me of the grand old days of ASCII art. And here is the Step Functions Christmas Tree I've created.
 
 
-![My Step Functions Christmas Tree](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qdklnw2r51atkk740cug.jpg)
+![My Step Functions Christmas Tree](/assets/images/c33cbb9d-0ea2-4a25-a2be-bb711bfa25e8.png)
 
 2023 has been an adventurous year for me. I'm so thankful to the AWS Community Builders and those who make this program great.
 
