@@ -2,6 +2,7 @@
 layout: post
 title:  "Community Builders – Christmas Edition"
 date:   "2022-12-20"
+toc:    false
 ---
 
 ![Cover Photo](/assets/images/37d97649-55e5-4928-bf1e-2e580a855b50.webp)

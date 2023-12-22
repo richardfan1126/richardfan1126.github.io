@@ -2,6 +2,7 @@
 layout: post
 title:  "Operation Fire Valley Rocks"
 date:   "2023-12-16"
+toc:    false
 ---
 
 I'm not a poet, and it's difficult for me to write a 10-verse poem.

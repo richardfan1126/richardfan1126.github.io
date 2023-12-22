@@ -27,7 +27,10 @@ layout: base
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
+    {%- if page.toc -%}
     {% include toc.html html=content %}
+    {%- endif -%}
+    {{ content }}
   </div>
 
   {%- if site.disqus.shortname -%}
