@@ -37,6 +37,7 @@ minima:
     - platform: devto
       user_url: https://dev.to/richardfan1126
 paginate: 5
+google_analytics: G-PMCJ5ZL9GH
 
 # Build settings
 # theme: minima
