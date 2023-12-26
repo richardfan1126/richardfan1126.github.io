@@ -6,6 +6,8 @@ author: Richard Fan
 toc:    true
 ---
 
+![Cover photo](/assets/images/4af737d4-f06f-4be9-accf-f26534b1a46c.png){:style="display:block; margin-left:auto; margin-right:auto"}
+
 ## Background
 
 I knew Jack from [Oblivious](https://www.oblivious.com/){:target="_blank"} (His company was called Oblivious AI then) early this year when I was researching companies that use [AWS Nitro Enclaves](https://aws.amazon.com/ec2/nitro/nitro-enclaves/){:target="_blank"}.
