@@ -54,8 +54,6 @@ Instead, the data is being loaded in a trusted execution environment (TEE) hoste
 
 To access the TEE, we must add a magic function `%%ag` into the code block. The magic is that we can only use limited libraries and functions in those code blocks.
 
-For example, `pandas` is a popular Python library data engineers use to play with the data. But inside the TEE, we can only use its variant - `op_pandas`.
-
 ![The operation in the TEE is limited](/assets/images/2fe7b0c5-15d6-41ba-b145-de0405231427.png)
 
 Data engineers usually use the `head()` function to preview the data. But with `op_pandas`, this action is blocked.
@@ -76,7 +74,7 @@ But the idea is that:
 
 **If we run enough amount of targeted queries on a dataset, we can interpolate some detail from an individual record.**
 
-**And differential privacy is all about limiting such a scenario. The more privacy budget we use, the more likely we can interpolate individual records.**
+**And differential privacy is all about limiting such a scenario. The less privacy budget we use, the less likely we can interpolate individual records.**
 
 Of course, if we want to train a good ML model, we should train it with accurate data. But the catch here is that we also want to protect individual privacy.
 
@@ -118,7 +116,7 @@ Even though we trust Antigranular or maybe some parties can access the source co
 
 To verify whether a TEE is running the exact same software, we must ensure the fingerprint is always the same.
 
-But many factors can make the compiled software different, e.g. time of build, software dependencies, etc., especially when the Antigranular runtime relies on many libraries written in Python, which is not easily reproducible.
+But many factors can make the compiled software different, e.g. time of build, software dependencies, etc., especially when the Antigranular runtime relies on many libraries written in Python, which is always inconsistent during build time.
 
 ### Threat modelling
 
