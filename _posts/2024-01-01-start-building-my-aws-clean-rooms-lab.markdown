@@ -6,7 +6,9 @@ author: Richard Fan
 toc:    true
 ---
 
- Last month, I had a [post on Linkedin](https://www.linkedin.com/posts/richardfan1126_from-privacy-to-partnership-the-royal-society-activity-7142354202655084544-ikbi){:target="_blank"} about AWS Clean Rooms Differential Privacy. But I was not comfortable sharing something that I've never used. So I spent some time to try it, but then hit the wall so hard.
+![Cover image](/assets/images/90acd2d7-dda6-4af5-8da1-7efe67122714.png){:style="display:block; margin-left:auto; margin-right:auto"}
+
+Last month, I had a [post on Linkedin](https://www.linkedin.com/posts/richardfan1126_from-privacy-to-partnership-the-royal-society-activity-7142354202655084544-ikbi){:target="_blank"} about AWS Clean Rooms Differential Privacy. But I was not comfortable sharing something that I've never used. So I spent some time to try it, but then hit the wall so hard.
 
 ## Why is it so challenging to try a clean room service?
 
