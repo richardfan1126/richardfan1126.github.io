@@ -6,6 +6,8 @@ author: Richard Fan
 toc:    true
 ---
 
+![Cover Image](/assets/images/5ad214ee-912e-4ae1-bb2f-c448af1b2c99.png){:style="display:block; margin-left:auto; margin-right:auto"}
+
 ## Background
 
 Yesterday, I had a discussion with a guy on Slack about "Does IAM [`aws:SourceVpc` condition](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcevpc){:target="_blank"} requires a VPC endpoint to work?".
