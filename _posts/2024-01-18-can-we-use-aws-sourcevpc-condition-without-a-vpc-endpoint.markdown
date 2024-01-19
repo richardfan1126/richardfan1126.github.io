@@ -6,7 +6,7 @@ author: Richard Fan
 toc:    true
 ---
 
-![Cover Image](/assets/images/5ad214ee-912e-4ae1-bb2f-c448af1b2c99.png){:style="display:block; margin-left:auto; margin-right:auto"}
+![Cover Image](/assets/images/a209cff0-beec-453d-bd81-1257febbd0ed.jpg){:style="display:none"}
 
 ## Background
 
