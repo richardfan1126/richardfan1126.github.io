@@ -6,6 +6,8 @@ author: Richard Fan
 toc:    true
 ---
 
+![Cover image](/assets/images/c3d9d805-f7da-497e-96b1-817f7b1503c5.png){:style="display:block; margin-left:auto; margin-right:auto"}
+
 In this post, I want to share my thoughts on giving examples in technical writing and the security implications behind it, no matter whether the impact is real or not.
 
 ## Background
