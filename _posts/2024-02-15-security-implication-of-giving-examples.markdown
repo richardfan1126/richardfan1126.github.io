@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Security Implication of Giving Examples"
-date:   "2024-02-16"
+date:   "2024-02-15"
 author: Richard Fan
 toc:    true
 ---
