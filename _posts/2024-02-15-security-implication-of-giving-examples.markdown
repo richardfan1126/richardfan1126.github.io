@@ -98,7 +98,7 @@ You may argue that my reasons are wrong and have better options.
 
 ### Use common pattern for personal values
 
-This is similar to [Do not show a fake secret](http://localhost:4000/2024/02/16/security-implication-of-giving-examples.html#do-not-show-a-fake-secret), but for some personal data (e.g. AWS account ID, AWS resource ARN).
+This is similar to [Do not show a fake secret](#do-not-show-a-fake-secret), but for some personal data (e.g. AWS account ID, AWS resource ARN).
 
 These data are not secrets, but we still don't want to expose them to the public.
 
