@@ -44,9 +44,12 @@ But when it comes to AWS API calls (Let's say an AWS CLI call `aws rds stop-db-i
 
 The AWS API call is not going to the resource itself (i.e., _The CLI is not talking to the RDS instance "Hey! I want to stop you"_). Instead, the API is going to an AWS API endpoint (_in this case, `rds.us-east-1.amazonaws.com`_), which is owned by AWS and sits outside of the VPC. (i.e., _The CLI is talking to AWS, "Hey! I want to stop that instance, please do it"_).
 
-To reach the AWS API endpoint, the traffic must either go through the Internet or a VPC endpoint inside the VPC. (The blue line in the above diagram).
+To reach the AWS API endpoint, the traffic must either go through the AWS backbone network or a VPC endpoint inside the VPC. (The blue line in the above diagram).
 
 We CANNOT create an AWS API endpoint inside a VPC, so there is no such "AWS API call within a VPC" (The red line in the above diagram doesn't exist)
+
+_Correction: The previous version wrongly stated that traffic going out of Internet Gateway to the AWS API endpoint is through the public Internet. But in fact, it is routed through the AWS backbone network._
+_However, this change doesn't affect the conclusion of this blog post._
 
 ### The way IAM knows the API request's context
 
