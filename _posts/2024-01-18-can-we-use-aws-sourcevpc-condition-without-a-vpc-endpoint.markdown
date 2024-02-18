@@ -6,7 +6,7 @@ author: Richard Fan
 toc:    true
 ---
 
-![Cover Image](/assets/images/a209cff0-beec-453d-bd81-1257febbd0ed.jpg){:style="display:none"}
+![Cover Image](/assets/images/4e17f41a-9536-4c49-b6b7-dc5800ec39cf.jpg){:style="display:none"}
 
 ## Background
 
@@ -33,7 +33,7 @@ The reason is based on 2 aspects:
 
 ### The route of a network request goes within AWS
 
-![AWS API endpoint is outside the VPC](/assets/images/a209cff0-beec-453d-bd81-1257febbd0ed.jpg)
+![AWS API endpoint is outside the VPC](/assets/images/4e17f41a-9536-4c49-b6b7-dc5800ec39cf.jpg)
 _AWS API endpoint is outside the VPC_
 
 Many AWS services can be deployed in a VPC (e.g., EC2 instance, RDS instance, ECS task, Elasticache cluster, etc.)
