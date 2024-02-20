@@ -6,7 +6,7 @@ author: Richard Fan
 toc:    true
 ---
 
-In December 2023, NIST published its first public draft of [Guidelines for Evaluating Differential Privacy Guarantees](https://csrc.nist.gov/pubs/sp/800/226/ipd){:target="_blank"}, this is a huge milestone of the digital privacy domain.
+In December 2023, NIST published its first public draft of NIST SP 800-226 [Guidelines for Evaluating Differential Privacy Guarantees](https://csrc.nist.gov/pubs/sp/800/226/ipd){:target="_blank"}, this is a huge milestone of the digital privacy domain.
 
 In this blog post, I'm going to tell you why and what you need to know from the guideline.
 
@@ -18,7 +18,7 @@ To understand the importance of **Differential Privacy (DP)**, we first need to 
 
 In the past, when people wanted to conduct research on data related to individuals, we used different methods to minimize the exposure of the raw data (e.g., Relying on a trusted 3rd party to curate the data, distributing the data curation process to different parties, etc.) These methods prevent privacy leaks from the raw data **Input**; we call it **Input Privacy**.
 
-But in some cases, we may also want to publish the research results to the broader audience or even the general public. We also need to ensure that an individual's privacy would not be derived from the result data **Output**; this is called the **Output Privacy**.
+But in some cases, we may also want to publish the research outputs to the broader audience or even the general public. We also need to ensure that an individual's privacy would not be derived from the result data **Output**; this is called the **Output Privacy**.
 
 ### Current De-identification method doesn't work
 
@@ -28,7 +28,7 @@ The most common method we have been using for decades is **De-identification**. 
 
 But this method has been frequently proved vulnerable; some prominent examples include [The Re-Identification of Governor William Weld's Medical Information](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2076397){:target="_blank"} and [De-anonymization attacks on Netflix Prize Dataset](https://arxiv.org/pdf/cs/0610105.pdf){:target="_blank"}
 
-Clearly, with enough auxiliary data, we can re-construct individual information from data that is supposed to be _Anonymized_. From this assumption, **every information of an individual is PII**.
+Clearly, with enough auxiliary data, we can re-construct individual information from data that is supposed to be _Anonymized_. From this assumption, **every piece of information about an individual should be considered PII**.
 
 ## What is Differential Privacy
 
@@ -50,6 +50,12 @@ _Let's say a smoker, John, didn't participate in that medical research; the resu
 
 In this example, although medical research makes the insurance company know that John has higher risk of lung cancer. But we can still say DP guarantees John's privacy in the medical research because it **makes no difference to him whether he participates or not**.
 
+### This is one of the first major guidelines for implementation
+
+Although Differential Privacy has formally existed for almost 20 years, the NIST SP 800-226 guideline is probably the first guideline published by a major institution covering the considerations when implementing it.
+
+This is a milestone in bringing DP from R&D into the discussion among practitioners and preparing us for broader adoption.
+
 ## Differential Privacy Foundations
 
 ### Epsilon (ε)
@@ -58,7 +64,7 @@ The formal definition of ε is the following formula:
 
 ![Definition of Epsilon](/assets/images/3fa3ef79-9c14-4adc-8aa5-fdeba8239f19.png)
 
-It might be too difficult to understand, but it roughly means **The chance where the datasets with and without an individual would produce different results**.
+It might be too difficult to understand, but it roughly means **The chance where the datasets with and without an individual would produce different outputs**.
 
 To understand it, we can assume a very small (or even zero) ε; there is little or no difference whether an individual participates in a research. So, there's less chance people can learn if that individual is or isn't in the dataset.
 
@@ -68,10 +74,38 @@ To understand it, we can assume a very small (or even zero) ε; there is little 
 
 Another concept the guideline calls out is the Privacy Unit.
 
-DP describes the difference between results from datasets with or without an individual, but it doesn't define **what is an individual**. It can be an individual transaction, or a person.
+DP describes the difference between outputs from datasets with or without an individual, but it doesn't define **what is an individual**. It can be an individual transaction, or a person.
 
 Since the common concern of data privacy is always about people. So the guideline suggests we always use **User as the Privacy Unit**.
 
 This means when we apply DP, we should always measure the ε when **ALL records related to one person** are presented or not.
 
 ## Differential Privacy in practice
+
+### Privacy Budget to limit privacy loss
+
+Having a mathematical measurement of privacy, we can limit privacy exposure more quantitatively.
+
+ε represents the amount of privacy loss from an output; we can sum the ε from all the outputs published from a dataset to measure the total privacy loss.
+
+This allows us to limit the privacy loss by **setting an upper bound of the total ε allowed for all published outputs from a dataset**, or we can call it the **Privacy budget**.
+
+### Adding noise to comply with the privacy budget
+
+ε is defined by the difference between outputs from datasets with or without an individual; it depends on how impactful an individual is to the output.
+
+If an individual record is very _special_ in the dataset, the ε of one output may already exceed the total privacy budget.
+
+So, in practice, we'll add random noise into the output to fulfill the ε requirement.
+
+**Adding random noise lowers the difference between outputs from datasets with or without an individual, thus lowering the ε**.
+
+## Challenges
+
+### Reduced accuracy and utility
+
+Accuracy and utility of an output may be related but not necessarily the same.
+
+The guideline calls it out by stating that output may be accurate but not useful if most attributes are redacted. Output may also be less accurate but still useful if the survey base is large.
+
+But either way, DP has impacts on both the accuracy and utility of the outputs. The primary reason is the **added random noise to the outputs**, especially when the data size is small and more noise is required.
