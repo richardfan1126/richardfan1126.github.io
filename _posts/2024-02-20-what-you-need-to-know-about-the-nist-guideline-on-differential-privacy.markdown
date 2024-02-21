@@ -42,7 +42,7 @@ The guideline makes it clear at the very beginning that **_Differential privacy 
 
 The word **Differential** means that the guarantee DP provides is relative to the situation where an individual doesn't participate in the dataset. DP can guarantee one's privacy will not face greater risk by participating in the data, but it **doesn't mean it will have no risk at all**.
 
-We can understand it easily by considering the following example:
+Let's consider the following example:
 
 _Medical research found that smokers have a higher risk of lung cancer, so their insurance premiums are usually higher than those of other people._
 
@@ -108,4 +108,72 @@ Accuracy and utility of an output may be related but not necessarily the same.
 
 The guideline calls it out by stating that output may be accurate but not useful if most attributes are redacted. Output may also be less accurate but still useful if the survey base is large.
 
-But either way, DP has impacts on both the accuracy and utility of the outputs. The primary reason is the **added random noise to the outputs**, especially when the data size is small and more noise is required.
+But either way, DP impacts both the accuracy and utility of the outputs. The primary reason is the **added random noise to the outputs**, especially when the data size is small and more noise is required.
+
+### Applications are still limited
+
+The guideline lists several applications of Differential Privacy; I would group them into the following 3 categories:
+
+1. **Analytic queries**
+
+    This category includes most commonly used aggregation queries (e.g., Count, Summation, Min, Max, etc.)
+
+    Because the output of these queries is numbers, it's **easy to measure the privacy loss** and **add random noise to comply with the privacy budget**.
+
+    In fact, these queries are the most commonly adopted application of DP and have the most detailed guidelines.
+
+1. **Synthetic data and Machine learning**
+
+    The guideline puts these 2 into separate categories, but I would group them together to simplify things.
+
+    Generating synthetic data or training ML model from the dataset can **give the curated output more correlation between attributes** (The guideline uses an example of the type of coffee vs purchases' age), which analytic queries are not good at.
+
+    There are some well-known methods for applying them to DP, like Marginal distributions and Differentially-private stochastic gradient descent (DP-SGD).
+
+    However, they are facing a similar problem: **The accuracy and utility of the output are easily affected by the model's complexity**
+
+    The main reason is that the random noise added to the DP output will be amplified when the analysis goal becomes more complex (e.g., more dimension on the synthetic data, more complex deep learning model, etc.).
+
+1. **Unstructured data**
+
+    Unstructured data are things like text, pictures, audio, video, etc. These data makes it difficult for people to identify the owner (e.g., a video can contain multiple people's faces)
+
+    The major obstacle to applying DP to these data is **the difficulty of identifying a meaningful privacy unit**.
+
+    Right now, there is very little research on applying DP to unstructured data.
+
+### Reduced accuracy amplifying bias
+
+The 3 biases introduced or amplified by DP are:
+
+1. **Systemic bias**
+
+    The smaller a dataset is, the more impact an individual can have on the result.
+    
+    That's why when dealing with smaller groups (e.g., minority population), the noise needed for DP is larger than that of others.
+
+    This larger noise can significantly impact the outputs of the already small dataset.
+
+    In some extreme cases, **the noise added to the output can even make a minority group non-existent in a research output**.
+
+    This would amplify the public bias towards minority populations.
+
+1. **Human Bias**
+
+    What DP can make the output even worse than erasing the entire group is that added noise can make unrealistic results.
+
+    E.g.
+    
+    * Random noise can be a fractional number, thus making countable measurements (e.g., population) become fractional
+
+    * Random noise can also be larger than the original data (especially when data size and ε are small). Adding negative noise to the output may result in a negative number, which is impossible in measurements like population.
+
+    **These unrealistic outputs may affect the public's view towards DP and give them the impression that DP is not a reliable method.**
+
+1. **Statistical Bias**
+
+    This bias is partly introduced when tackling Human Bias.
+
+    When we post-process the DP output to make unrealistic output realistic, **the overall accuracy and utility may be affected by the change**.
+
+### Security challenges
