@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "What You Need to Know About the NIST Guideline on Differential Privacy"
-date:   "2024-02-20"
+date:   "2024-02-21"
 author: Richard Fan
 toc:    true
 ---
