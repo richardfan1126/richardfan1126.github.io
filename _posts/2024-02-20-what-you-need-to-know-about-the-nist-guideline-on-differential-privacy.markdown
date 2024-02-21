@@ -6,6 +6,8 @@ author: Richard Fan
 toc:    true
 ---
 
+![Cover image](/assets/images/f9bd41e3-1316-4a3f-8cb5-3dbbfbf09c58.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+
 In December 2023, NIST published its first public draft of NIST SP 800-226 [Guidelines for Evaluating Differential Privacy Guarantees](https://csrc.nist.gov/pubs/sp/800/226/ipd){:target="_blank"}, this is a huge milestone of the digital privacy domain.
 
 In this blog post, I'm going to tell you why and what you need to know from the guideline.
