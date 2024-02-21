@@ -10,6 +10,36 @@ In December 2023, NIST published its first public draft of NIST SP 800-226 [Guid
 
 In this blog post, I'm going to tell you why and what you need to know from the guideline.
 
+## Highlights
+
+I'm trying to summarize a sixty-page guideline into one blog post, but it's still too long. So, I'm putting the highlight at the beginning for your convenience:
+
+* Differential Privacy (DP) is a Statistical measurement of privacy loss
+
+    * Epsilon (ε) is an important parameter to measure the privacy loss from a data output
+
+    * DP limits total privacy loss by setting thresholds of the ε (i.e., Privacy Budget)
+
+    * Defining the Privacy Unit is important. (i.e., do we want to protect the privacy of a person? Or the privacy of a transaction?)
+
+    * In practice, we add random noise to the output to meet the expected ε (or Privacy Budget)
+
+* Challenges
+
+    * Applications are still limited to simple models (e.g., Analytic queries, simple ML models and synthetic data)
+
+    * The reduced accuracy from added noise impacts complex analytic models a lot
+
+    * DP on unstructured data is still very difficult
+
+    * Bias is introduced or amplified by DP, mainly from the added noise
+
+    * Conventional security models also apply to DP implementation. Privacy vs accuracy is an extra consideration.
+
+* Data protection and data minimization are still important fundamentals even though we have DP.
+
+---
+
 ## What is the current state of privacy protection
 
 To understand the importance of **Differential Privacy (DP)**, we first need to understand the current privacy protection approaches and some basic concepts.
@@ -140,7 +170,7 @@ The guideline lists several applications of Differential Privacy; I would group 
 
     The major obstacle to applying DP to these data is **the difficulty of identifying a meaningful privacy unit**.
 
-    Right now, there is very little research on applying DP to unstructured data.
+    Currently, there is very little research on applying DP to unstructured data.
 
 ### Reduced accuracy amplifying bias
 
@@ -177,3 +207,49 @@ The 3 biases introduced or amplified by DP are:
     When we post-process the DP output to make unrealistic output realistic, **the overall accuracy and utility may be affected by the change**.
 
 ### Security challenges
+
+Although the guideline focuses on Differential Privacy, it also reminds us that general security principles also apply to the implementation.
+
+Some of the guidelines given are similar to conventional risk management, but we'll need to deal with more kinds of vulnerabilities, such as:
+
+* **Interactive Query**
+
+    Allowing data consumers to run their own queries would make DP implementation difficult because data consumers may be untrusted, and they will try to issue **malicious query to break the DP guarantee**.
+
+    Data custodians also need to store the raw data for real-time queries, which **increases data leak risk**.
+
+    In my opinion, **this is similar to conventional application protecting the database behind**. But in DP case, we'll also **take Privacy Budget into account**.
+
+* **Trust Boundary**
+
+    The guideline explains 2 different threat models: The local model and the Central model.
+
+    Depending on where we put the trust boundary, we will apply DP on different layers, either when **data is sent from data subject to data curator**, or **from data curator to data consumers**.
+
+    The same principles apply just like when we do the conventional threat model. But in DP case, we also need to balance the output accuracy and risk.
+    
+    **The earlier we apply DP, the fewer risks we take. However, the accuracy of the final output also decreases.**
+
+While some challenges may look similar to conventional security frameworks, some are specific to DP.
+
+I'm not going to details because they are quite implementation-specific, but the guideline includes the following:
+
+* Floating-Point Arithmetic
+
+* Timing Channels
+
+* Backend Issues
+
+## Back to the basics, data protection is the paramount to privacy protection
+
+Last but not least, the guideline closed up by the 2 most fundamental and yet important things:
+
+* **Data Security and Access Control**
+
+* **Data Collection Exposure**
+
+Simply put, if we cannot protect the raw data in the first place, all privacy protections would become meaningless.
+
+And take one more step back, **data protection and privacy protection can minimize but not eliminate privacy risk**.
+
+**If the data is not needed for research purposes, we shouldn't collect it in the first place.**
