@@ -6,8 +6,6 @@ author: Richard Fan
 toc:    true
 ---
 
-![Cover Image](/assets/images/8734c91a-5130-4590-88b7-b93684affa4a.jpg){:style="display:none"}
-
 **Link to the GitHub Action discussed in this post**: [https://github.com/marketplace/actions/aws-nitro-enclaves-eif-build-action](https://github.com/marketplace/actions/aws-nitro-enclaves-eif-build-action){:target="_blank"}
 
 ---
