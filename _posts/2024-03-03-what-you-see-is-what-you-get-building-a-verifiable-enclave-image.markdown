@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "What You Dee is What You Get - Building a Verifiable Enclave Image"
+title:  "What You See is What You Get - Building a Verifiable Enclave Image"
 date:   "2024-03-03"
 author: Richard Fan
 toc:    true
