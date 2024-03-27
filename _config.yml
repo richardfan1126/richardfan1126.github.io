@@ -26,6 +26,7 @@ url: https://blog.richardfan.xyz # the base hostname & protocol for your site, e
 author:
   name: Richard Fan
   email: richardfan1126@gmail.com
+repository: richardfan1126/richardfan1126.github.io
 minima:
   social_links:
     - platform: github
