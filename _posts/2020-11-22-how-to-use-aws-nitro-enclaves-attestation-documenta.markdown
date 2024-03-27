@@ -4,6 +4,7 @@ title:  "How to Use AWS Nitro Enclaves Attestation Document"
 date:   "2020-11-22"
 author: Richard Fan
 toc:    true
+tags:   nitro-enclaves
 ---
 
 In my last blog post [Running Python App on AWS Nitro Enclaves](/2020/11/03/running-python-app-on-aws-nitro-enclaves.html){:target="_blank"}, I briefly introduced what **AWS Nitro Enclaves** is and also demonstrate how network connection works on Nitro Enclaves.

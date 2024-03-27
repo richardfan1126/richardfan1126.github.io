@@ -4,6 +4,7 @@ title:  "AWS Nitro Enclaves Ecosystem (1) - Chain of trust"
 date:   "2022-12-22"
 author: Richard Fan
 toc:    true
+tags:   nitro-enclaves
 ---
 
 ## Background
