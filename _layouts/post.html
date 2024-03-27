@@ -24,6 +24,13 @@ layout: base
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
       {%- endif -%}</p>
+      
+      {% assign sorted_tag = page.tags | sort %}
+      {% for tag in sorted_tag %}
+        <a href="{{ "tag/" | append: tag | relative_url }}">
+          #{{ tag }}
+        </a>
+      {% endfor %}
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">

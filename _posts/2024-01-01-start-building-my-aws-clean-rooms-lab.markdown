@@ -4,6 +4,7 @@ title:  "Start building my AWS Clean Rooms lab"
 date:   "2024-01-01"
 author: Richard Fan
 toc:    true
+tags:   pet differential-privacy aws-clean-rooms
 ---
 
 ![Cover image](/assets/images/90acd2d7-dda6-4af5-8da1-7efe67122714.png){:style="display:block; margin-left:auto; margin-right:auto"}

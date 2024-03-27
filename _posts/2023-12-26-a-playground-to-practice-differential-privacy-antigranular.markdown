@@ -4,6 +4,7 @@ title:  "A playground to practice differential privacy - Antigranular"
 date:   "2023-12-26"
 author: Richard Fan
 toc:    true
+tags:   pet differential-privacy
 ---
 
 ![Cover photo](/assets/images/4af737d4-f06f-4be9-accf-f26534b1a46c.png){:style="display:block; margin-left:auto; margin-right:auto"}

@@ -4,6 +4,7 @@ title:  "What You Need to Know About the NIST Guideline on Differential Privacy"
 date:   "2024-02-21"
 author: Richard Fan
 toc:    true
+tags:   pet differential-privacy
 ---
 
 ![Cover image](/assets/images/f9bd41e3-1316-4a3f-8cb5-3dbbfbf09c58.jpg){:style="display:block; margin-left:auto; margin-right:auto"}

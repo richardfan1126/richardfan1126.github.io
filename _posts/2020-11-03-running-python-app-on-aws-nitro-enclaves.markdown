@@ -4,7 +4,7 @@ title:  "Running Python App on AWS Nitro Enclaves"
 date:   "2020-11-03"
 author: Richard Fan
 toc:    true
-tags:   nitro-enclaves
+tags:   nitro-enclaves pet
 ---
 
 # What is AWS Nitro Enclaves
