@@ -2,7 +2,7 @@
 layout: base
 ---
 
-<h2>{{ page.tag }}</h2>
+<h2>#{{ page.tag }}</h2>
 <ul class="post-list">
   {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
   {% for post in page.posts %}
