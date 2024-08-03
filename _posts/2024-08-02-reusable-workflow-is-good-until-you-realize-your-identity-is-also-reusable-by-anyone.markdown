@@ -6,6 +6,8 @@ author: Richard Fan
 toc:    true
 ---
 
+![Cover image](/assets/images/34416564-5355-4060-999c-5284caea04b0.png){:style="display:none"}
+
 In this post, I want to share a way people can use our GitHub Actions workflow to sign their own artifacts and confuse consumers into thinking they're signed by us.
 
 ## Keyless signing
