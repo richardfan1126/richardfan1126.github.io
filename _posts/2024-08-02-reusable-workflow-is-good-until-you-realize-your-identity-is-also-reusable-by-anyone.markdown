@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Reusable workflow is good ... Until you realize your identity is also reusable by anyone"
+title:  "Reusable workflow is good ... Until you realize your identity is also reusable by anyone (1)"
 date:   "2024-08-02"
 author: Richard Fan
 toc:    true
