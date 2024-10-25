@@ -194,3 +194,15 @@ I can't verify if that's the case because the demo repository of this blog post 
 But whoever follows this blog post ... good luck!
 
 ## Wrap up
+
+GitHub Actions reusable workflow is a great way to centralize and standardize CI/CD pipelines.
+
+Having authentication between CI/CD pipelines and cloud environments aware of which reusable workflow is being used helps enforce the standards.
+
+But we need to be careful, using `job_workflow_ref` as the only authentication condition is dangerous.
+
+At the end of the day, we want to know **who** is trying to login, not just **how** they login.
+
+If you are implementing GitHub Actions authentication workflow on cloud, make sure the condition on `sub` claim is restricted as specific as who you want to access your cloud account.
+
+**In most cases, you would always want to check the `repo` claim. So keep it as your access control condition unless you know what you are doing.**
