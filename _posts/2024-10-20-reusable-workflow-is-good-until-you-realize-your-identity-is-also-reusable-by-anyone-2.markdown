@@ -104,22 +104,93 @@ After some Google search, I found a few blog posts and tutorials guiding people 
 Here are some examples:
 
 * [Using OIDC with Reusable Workflows to Securely Access Cloud Resources](https://josh-ops.com/posts/github-actions-oidc-reusable-workflows/){:target="_blank"}
-* [How to setup Github Actions authentication with AWS using OIDC](https://mymakerspace.substack.com/p/how-to-setup-github-actions-authentication){:target="_blank"}
+* [How to setup GitHub Actions authentication with AWS using OIDC](https://mymakerspace.substack.com/p/how-to-setup-github-actions-authentication){:target="_blank"}
 * [Azure Deployment Using GitHub Actions Reusable Workflows From Central Repo With OIDC](https://medium.com/@tajinder.singh1985/azure-deployment-using-github-actions-reusable-workflows-from-central-repo-with-oidc-8de4cc5a6612){:target="_blank"}
 
 
 ### Using reusable workflow to enforce CI/CD governance
 
-These 3 examples have a similar reason on their design, which is to enforce CI/CD governance.
+These 3 examples have a similar reason for their design: to enforce CI/CD governance.
 
 In an organization having multiple teams building their own workloads, using the same standard to deploy resources is critical.
 
-Using `job_workflow_ref` as one of the authentication condition can force all teams to use the same reusable workflow to access cloud environments.
+Using `job_workflow_ref` as one of the authentication conditions can force all teams to use the same reusable workflow to access cloud environments.
 
-DevOps team can then implement best practices within the centralized reusable workflow.
+The DevOps team can then implement best practices in the centralized reusable workflow.
 
 ![Using reusable workflow to enforce CI/CD governance](/assets/images/0788a4fa-14f8-45d1-b0cd-9a93334e3356.jpg)
 
 ### Confused deputy problem
 
+However, using only the `job_workflow_ref` as the access control condition causes a confused deputy situation.
+
+`job_workflow_ref` indicates the location of the GitHub Actions workflow. In a reusable workflow scenario, this would be the location of the reusable workflow.
+
+In the previous example, the OIDC token may look like this:
+
+```json
+{
+  ...
+  "sub": "repo:octo-org/app-team2-repo:...",
+  "job_workflow_ref": "octo-org/devops-repo/.github/workflows/deployment-workflow.yml@refs/heads/main"
+  ...
+}
+```
+
+If the repository owner customized the subject claim to include `job_workflow_ref`, it may look like this:
+
+```json
+{
+  ...
+  "sub": "job_workflow_ref:octo-org/devops-repo/.github/workflows/deployment-workflow.yml@refs/heads/main",
+  "job_workflow_ref": "octo-org/devops-repo/.github/workflows/deployment-workflow.yml@refs/heads/main"
+  ...
+```
+
+Now, the cloud authentication system (i.e., AWS STS) can only see which workflow requests a session token but can't see where it is initially triggered.
+
+Is it `app-team1-repo`? Is it `app-team2-repo`? Or is it something else?
+
+Imagine the reusable workflow is called someone else (which can be anyone if the reusable workflow is publicly readable); that person can also authenticate to the cloud environment!
+
 ![Broken access control caused by confused deputy problem](/assets/images/9c80e51b-99ba-4c9d-9a52-ceb9aca0f5a6.jpg)
+
+### Try to ... hack
+
+To prove my theory, I followed one of the blog posts I found and tried to access its demo environment.
+
+In that blog post, the author created a reusable workflow to log in to a Microsoft Azure account using OIDC tokens.
+
+![A reusable workflow to access Azure account](/assets/images/dfe769c4-13a7-4d3b-af42-bf82561798ff.jpg)
+
+---
+
+In his demo Azure account, he used `job_workflow_ref` as the only Subject identifier condition and put the location of the reusable workflow hosted in his GitHub repository.
+
+![Using job_workflow_ref as the only condition to authenticate](/assets/images/8eeaf5c5-4378-4c68-b01d-831f2aecad9d.jpg)
+
+---
+
+I created a simple GitHub Actions workflow just to call his reusable workflow.
+
+![I created a simple GitHub Actions workflow to call the reusable workflow](/assets/images/73a28f00-a062-454a-b17f-047e8f82cf46.jpg)
+
+From the screenshot, we can see that my GitHub Actions run can successfully log in to his demo account.
+
+![Successfully login to the Azure account](/assets/images/79f60490-8c73-4a13-b719-984efc419bfe.png)
+
+---
+
+Luckily, this workflow only lists the available secrets in the Azure account and does nothing else. So, even though I can log in to the account, I can't do any damage to it.
+
+However, I found [another blog post](https://medium.com/@tajinder.singh1985/azure-deployment-using-github-actions-reusable-workflows-from-central-repo-with-oidc-8de4cc5a6612){:target="_blank"} suggests using reusable workflow to log in to Azure account and do webapps deployment.
+
+This workflow takes the webapp name and package path as inputs. So, in theory, everyone can put their package in their own repository and use this reusable workflow to deploy it to the owner's Azure account.
+
+![Reusable workflow for Azure webapps deploy](/assets/images/1cf97df9-31c8-4165-be72-edc42336e0ca.png)
+
+I can't verify if that's the case because the demo repository of this blog post has been deleted already.
+
+But whoever follows this blog post ... good luck!
+
+## Wrap up
