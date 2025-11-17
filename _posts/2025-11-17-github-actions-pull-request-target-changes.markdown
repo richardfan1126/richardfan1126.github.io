@@ -6,6 +6,8 @@ author: Richard Fan
 toc:    true
 ---
 
+![Cover Image](/assets/images/60935818-88d1-4ff4-b79b-13d13c6b05a8.png){:style="display:none"}
+
 From 8 Dec 2025, GitHub will introduce a [breaking change](https://github.blog/changelog/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes/){:target="_blank"} on GitHub Actions `pull_request_target` event, here is what you need to know.
 
 ## What is `pull_request_target`
