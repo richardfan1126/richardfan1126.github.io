@@ -8,7 +8,7 @@ toc:    true
 
 ![Cover Image](/assets/images/0c08d035-f801-4c32-9dfe-e6600f81007e.png)
 
-In October, AWS announced a new feature, [EC2 Instance Attestation](https://aws.amazon.com/about-aws/whats-new/2025/09/aws-announces-ec2-instance-attestation/){:target="_blank"}.
+In September, AWS announced a new feature, [EC2 Instance Attestation](https://aws.amazon.com/about-aws/whats-new/2025/09/aws-announces-ec2-instance-attestation/){:target="_blank"}.
 
 In this post, we will see what it is and how we can use it.
 
