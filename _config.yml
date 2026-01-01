@@ -39,8 +39,8 @@ minima:
       user_url: https://dev.to/richardfan1126
 paginate: 5
 google_analytics: G-PMCJ5ZL9GH
-disqus:
-  shortname: virtual-security-car
+# disqus:
+#   shortname: virtual-security-car
 
 tag_page_layout: tag_page
 tag_page_dir: tag
