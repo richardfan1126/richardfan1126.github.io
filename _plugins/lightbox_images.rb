@@ -10,11 +10,20 @@ module Jekyll
       lightbox_config = site_config['lightbox'] || {}
       return content unless lightbox_config['enabled'] != false
       
-      # Parse HTML content
-      doc = Nokogiri::HTML::DocumentFragment.parse(content)
+      # Detect if this is a complete HTML document or just a fragment
+      is_full_document = content.strip.start_with?('<!DOCTYPE', '<html')
+      
+      # Parse HTML content appropriately
+      if is_full_document
+        doc = Nokogiri::HTML::Document.parse(content)
+        root_element = doc
+      else
+        doc = Nokogiri::HTML::DocumentFragment.parse(content)
+        root_element = doc
+      end
       
       # Find all image tags
-      images = doc.css('img')
+      images = root_element.css('img')
       
       return content if images.empty?
       
@@ -26,8 +35,12 @@ module Jekyll
         process_image(img, group_id, index)
       end
       
-      # Return the modified HTML
-      doc.to_html
+      # Return the modified HTML with proper formatting
+      if is_full_document
+        doc.to_html
+      else
+        root_element.to_html
+      end
     end
     
     private
