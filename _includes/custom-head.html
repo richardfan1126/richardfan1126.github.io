@@ -1,6 +1,26 @@
 {% comment %}
-  Placeholder to allow defining custom head, in principle, you can add anything here, e.g. favicons:
+Placeholder to allow defining custom head, in principle, you can add anything here, e.g. favicons:
 
-  1. Head over to https://realfavicongenerator.net/ to add your own favicons.
-  2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
+1. Head over to https://realfavicongenerator.net/ to add your own favicons.
+2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
 {% endcomment %}
+
+{% unless site.lightbox.enabled == false %}
+<!-- jQuery (required for Lightbox2) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- Lightbox2 CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"
+    integrity="sha384-MzHT0pgTPI8fjMvEz54yA7HmSVjLLsxl+ytGS13+EOr/L5uLaBakmchzKgDYsSQz" crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+
+<!-- Lightbox2 JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"
+    integrity="sha384-jN3Qe7xtdnQxdyZWXD9gn2Z4oRyiFuU03xQATriSicCq2SKDikN9UEJMCx+9nsJM" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+
+<!-- Lightbox2 Configuration -->
+<script src="{{ '/assets/js/lightbox-config.js' | relative_url }}"></script>
+{% endunless %}

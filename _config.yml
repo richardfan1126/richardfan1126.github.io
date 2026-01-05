@@ -42,8 +42,28 @@ google_analytics: G-PMCJ5ZL9GH
 # disqus:
 #   shortname: virtual-security-car
 
-tag_page_layout: tag_page
-tag_page_dir: tag
+# Lightbox configuration
+lightbox:
+  enabled: true
+  gallery_mode: "per_post"  # Options: "per_post", "per_page", "global"
+  options:
+    resizeDuration: 200
+    fadeDuration: 200
+    imageFadeDuration: 200
+    maxWidth: null
+    maxHeight: null
+    fitImagesInViewport: true
+    showImageNumberLabel: true
+    alwaysShowNavOnTouchDevices: false
+    wrapAround: true
+
+# Jekyll Archives configuration (replaces jekyll-tagging)
+jekyll-archives:
+  enabled:
+    - tags
+  layout: tag_page
+  permalinks:
+    tag: '/tag/:name/'
 
 # Build settings
 # theme: minima
@@ -51,7 +71,8 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-toc
-  - jekyll-tagging
+  - jekyll-seo-tag
+  - jekyll-archives
 
 # Exclude from processing.
 # The following items will not be processed, by default.
