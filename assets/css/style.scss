@@ -5,3 +5,8 @@
 @import
   "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize";
+
+
+.pagination li div {
+  padding: 10px 12px;
+}

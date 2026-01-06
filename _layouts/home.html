@@ -41,18 +41,33 @@ layout: base
     {% if site.paginate %}
       <div class="pager">
         <ul class="pagination">
-        {%- if paginator.previous_page %}
-          <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-          <li><div class="current-page">{{ paginator.page }}</div></li>
-        {%- if paginator.next_page %}
-          <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-        </ul>
+          {% if paginator.total_pages > 1 %}
+            <!-- Previous Link -->
+            {% if paginator.previous_page %}
+              <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous">Previous</a></li>
+            {% else %}
+              <li><div class="pager-edge">•</div></li>
+            {% endif %}
+
+            <!-- Page Numbers -->
+            {% for page_num in (1..paginator.total_pages) %}
+              {% if page_num == paginator.page %}
+                <li><div class="current-page">{{ page_num }}</div></li>
+              {% elsif page_num == 1 %}
+                <li><a href='{{ "/" | relative_url }}' class="page_number">{{ page_num }}</a></li>
+              {% else %}
+                <li><a href="{{ site.paginate_path | replace: ':num', page_num | relative_url }}" class="page_number">{{ page_num }}</a></li>
+              {% endif %}
+            {% endfor %}
+
+            <!-- Next Link -->
+            {% if paginator.next_page %}
+              <li><a href="{{ paginator.next_page_path | relative_url }}" class="next">Next</a></li>
+            {% else %}
+              <li><div class="pager-edge">•</div></li>
+            {% endif %}
+          {% endif %}
+        </div>
       </div>
     {%- endif %}
 
