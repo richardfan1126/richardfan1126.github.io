@@ -4,6 +4,7 @@ title:  "Reusable workflow is good ... Until you realize your identity is also r
 date:   "2024-10-20"
 author: Richard Fan
 toc:    true
+tags:   cicd
 ---
 
 In my [previous blog post](/2024/08/02/reusable-workflow-is-good-until-you-realize-your-identity-is-also-reusable-by-anyone.html){:target="_blank"}, we discussed how a GitHub reusable workflow can be used by others to sign their software artifact.

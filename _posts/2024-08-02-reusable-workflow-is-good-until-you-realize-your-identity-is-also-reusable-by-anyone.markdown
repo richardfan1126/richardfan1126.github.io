@@ -4,6 +4,7 @@ title:  "Reusable workflow is good ... Until you realize your identity is also r
 date:   "2024-08-02"
 author: Richard Fan
 toc:    true
+tags:   cicd
 ---
 
 ![Cover image](/assets/images/34416564-5355-4060-999c-5284caea04b0.png){:style="display:none"}

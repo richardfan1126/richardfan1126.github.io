@@ -4,7 +4,7 @@ title:  "What You See is What You Get - Building a Verifiable Enclave Image"
 date:   "2024-03-03"
 author: Richard Fan
 toc:    true
-tags:   nitro-enclaves pet
+tags:   nitro-enclaves pet cicd
 ---
 
 **Link to the GitHub Action discussed in this post**: [https://github.com/marketplace/actions/aws-nitro-enclaves-eif-build-action](https://github.com/marketplace/actions/aws-nitro-enclaves-eif-build-action){:target="_blank"}

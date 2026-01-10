@@ -4,6 +4,7 @@ title:  "Breaking change on GitHub Actions pull_request_target"
 date:   "2025-11-17"
 author: Richard Fan
 toc:    true
+tags:   cicd
 ---
 
 ![Cover Image](/assets/images/60935818-88d1-4ff4-b79b-13d13c6b05a8.png){:style="display:none"}
